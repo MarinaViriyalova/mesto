@@ -2,6 +2,7 @@
     background-image: url(../../../images/add-logo.svg);
     background-repeat: no-repeat;
     background-position: center;
+    align-self: center;
     width: 150px;
     height: 50px;
     border: 2px solid #FFFFFF;
@@ -15,9 +16,9 @@
     transition: opacity 0.5s;
 }
 
-@media screen and (max-width: 424px) {
+@media screen and (max-width: 699px) {
     .profile__add-button {
         width: 282px;
-        height: 50px;
+        margin-top: 36px;
     }
 }
