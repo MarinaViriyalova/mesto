@@ -1,29 +1,27 @@
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("Inter-Regular.woff2?v=3.18") format("woff2"), url("Inter-Regular.woff?v=3.18") format("woff");
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url("Inter-Bold.woff2?v=3.18") format("woff2"), url("Inter-Bold.woff?v=3.18") format("woff");
-}
-
-@font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url("Inter-Black.woff2?v=3.18") format("woff2"), url("Inter-Black.woff?v=3.18") format("woff");
-}
-
-
-/* -------------------------------------------------------
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: normal;
+        font-display: swap;
+        src: url(./Inter-Regular.woff) format('woff'), url(./Inter-Regular.woff2) format('woff2');
+    }
+    
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(./Inter-Medium.woff) format('woff'), url(./Inter-Medium.woff2) format('woff2');
+    }
+    
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(./Inter-Black.woff) format('woff'), url(./Inter-Black.woff2) format('woff2');
+    }
+    /* -------------------------------------------------------
 Variable font.
 Usage:
 
@@ -32,9 +30,7 @@ Usage:
     html { font-family: 'Inter var', sans-serif; }
   }
 */
-
-
-/* --------------------------------------------------------------------------
+    /* --------------------------------------------------------------------------
 [EXPERIMENTAL] Multi-axis, single variable font.
 
 Slant axis is not yet widely supported (as of February 2019) and thus this
