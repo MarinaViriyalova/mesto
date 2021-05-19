@@ -11,6 +11,9 @@
     padding-bottom: 13px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (min-width: 320px) and (max-width:509px) {
