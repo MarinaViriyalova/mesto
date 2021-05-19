@@ -1,0 +1,12 @@
+.element {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+    border-radius: 10px;
+}
+
+.element:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,13 @@
+.profile__title {
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 320px) {
+    .profile__title {
+        max-width: 250px;
+    }
+}
