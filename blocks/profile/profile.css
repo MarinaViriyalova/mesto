@@ -4,6 +4,8 @@
     padding: 40px 0 25px 0;
     background-color: #000000;
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
 }
