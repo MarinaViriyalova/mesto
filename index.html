@@ -39,10 +39,12 @@
         <div class="popup__container">
             <button type="button" class="popup__close"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form action="Url" class="popup__form" name="Edit Form">
-                <input type="text" name="Name" placeholder="Имя" class="popup__input popup__input_text_name">
-                <input type="text" name="Profession" placeholder="Профессия" class="popup__input popup__input_text_work">
-                <button type="submit" class="popup__submit">Сохранить</button>
+            <form action="Url" class="popup__form popup__form_type_edit-profile" name="EditForm" method="POST" novalidate>
+                <input type="text" name="Name" placeholder="Имя" class="popup__input popup__input_text_name" id="name" minlength="2" maxlength="40" required>
+                <span class="name-error popup__form-error"></span>
+                <input type="text" name="Profession" placeholder="Профессия" class="popup__input popup__input_text_work" id="profession" minlength="2" maxlength="200" required>
+                <span class="profession-error popup__form-error popup__form-error_pos_under"></span>
+                <button type="submit" class="popup__submit" aria-label="Сохранить профиль">Сохранить</button>
             </form>
         </div>
     </div>
@@ -50,10 +52,12 @@
         <div class="popup__container">
             <button type="button" class="popup__close" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form" name="Add Form">
-                <input type="text" class="popup__input popup__input_value_pic-name" placeholder="Название" name="Picture Name" required>
-                <input type="text" class="popup__input popup__input_value_link" placeholder="Ссылка на картинку" name="Picture Link" required>
-                <button type="submit" class="popup__submit" aria-label="Сохранить профиль">Создать</button>
+            <form action="Url" class="popup__form popup__form_type_add-card" name="AddForm" method="POST" novalidate>
+                <input type="text" class="popup__input popup__input_value_pic-name" placeholder="Название" name="pictureName" id="title" minlength="2" maxlength="30" required>
+                <span class="title-error popup__form-error"></span>
+                <input type="url" class="popup__input popup__input_value_link" placeholder="Ссылка на картинку" name="pictureLink" id="link" required>
+                <span class="link-error popup__form-error popup__form-error_pos_under"></span>
+                <button type="submit" class="popup__submit" aria-label="Сохранить картинку">Создать</button>
             </form>
         </div>
     </div>
@@ -78,6 +82,7 @@
 
     <script src="./script/initialCards.js"></script>
     <script src="./script/script.js"></script>
+    <script src="./script/validation.js"></script>
 </body>
 
 </html>

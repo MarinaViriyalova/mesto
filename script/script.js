@@ -33,13 +33,23 @@ const itemTemplate = document.querySelector('.elements__template').content;
 // open popup
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    popup.addEventListener('mousedown', closePopupOverlay);
     document.addEventListener("keydown", closePopupEsc);
+
 }
 
 // close popup
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
-    document.addEventListener("keydown", closePopupEsc);
+    popup.addEventListener('mousedown', closePopupOverlay);
+    document.removeEventListener("keydown", closePopupEsc);
+}
+
+// Close popup - overlay
+function closePopupOverlay(event) {
+    if (event.target === event.currentTarget) {
+        closePopup(event.currentTarget);
+    }
 }
 
 // Close popup - esc 
@@ -98,6 +108,10 @@ function submitAddCardForm(evt) {
     const newCard = createNewCard(card);
     renderCard(newCard);
     closePopup(addCardPopup);
+    const inputList = Array.from(addCardPopup.querySelectorAll('.popup__input'));
+    const buttonElement = addCardPopup.querySelector('.popup__submit');
+    saveCardForm.reset(); //Сбрасываю форму после сохранения карточки
+    toggleButtonState(inputList, buttonElement, 'popup__submit_disabled'); //Вызываем функцию переключения сабмит-кнопки
 }
 
 // delete element
