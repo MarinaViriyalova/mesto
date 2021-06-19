@@ -15,11 +15,3 @@
 .popup__input:not(:first-of-type) {
     margin-top: 30px;
 }
-
-@media screen and (min-width: 320px) and (max-width:509px) {
-    .popup__input {
-        max-width: 238px;
-        width: 100%;
-        margin: 0px 22px 30px 22px;
-    }
-}

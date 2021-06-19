@@ -10,8 +10,15 @@
     margin-top: 54px;
 }
 
-@media screen and (max-width: 618px) {
+@media screen and (max-width: 767px) {
     .popup__form {
-        margin-top: 75px;
+        width: 280px;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .popup__form {
+        min-height: 200px;
+        padding-top: 10px;
     }
 }
