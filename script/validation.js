@@ -1,6 +1,12 @@
 // validation function
 function enableValidation(setup) {
-    const form = document.querySelector(setup.formSelector);
+    const forms = document.querySelectorAll(setup.formSelector);
+    forms.forEach((form) => {
+        setEventListeners(form, setup);
+    })
+};
+
+function setEventListeners(form, setup) {
     const inputList = Array.from(form.querySelectorAll(setup.inputSelector));
     const buttonElement = form.querySelector(setup.submitButtonSelector);
     toggleButtonState(inputList, buttonElement, setup.inactiveButtonClass);
@@ -10,7 +16,12 @@ function enableValidation(setup) {
             toggleButtonState(inputList, buttonElement, setup.inactiveButtonClass);
         });
     });
-};
+}
+
+
+
+
+
 
 // form validality check
 function isValid(formElement, inputElement) {
@@ -54,17 +65,9 @@ function toggleButtonState(inputList, buttonElement, inactiveButtonClass) {
     }
 }
 
-// validation add card
+// validation 
 enableValidation({
-    formSelector: '.popup__form_type_add-card',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__submit',
-    inactiveButtonClass: 'popup__submit_disabled',
-});
-
-// validation edit profile
-enableValidation({
-    formSelector: '.popup__form_type_edit-profile',
+    formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__submit',
     inactiveButtonClass: 'popup__submit_disabled',
