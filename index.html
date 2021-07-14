@@ -57,7 +57,7 @@
                 <span class="title-error popup__form-error"></span>
                 <input type="url" class="popup__input popup__input_value_link" placeholder="Ссылка на картинку" name="pictureLink" id="link" required>
                 <span class="link-error popup__form-error popup__form-error_pos_under"></span>
-                <button type="submit" class="popup__submit" aria-label="Сохранить картинку">Создать</button>
+                <button type="submit" class="popup__submit popup__submit_disabled" aria-label="Сохранить картинку" disabled="true">Создать</button>
             </form>
         </div>
     </div>
@@ -80,9 +80,8 @@
         </li>
       </template>
 
-    <script src="./script/initialCards.js"></script>
-    <script src="./script/script.js"></script>
-    <script src="./script/validation.js"></script>
+
+    <script type="module" src='./script/index.js'></script>
 </body>
 
 </html>
