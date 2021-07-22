@@ -10,6 +10,7 @@
 * RWD
 * ООП
 * Классы в JavaScript
+* Webpack
 
 **Figma**
 

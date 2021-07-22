@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="./pages/index.css">
     <meta name="description" content="Mesto">
     <meta name="author" content="Marina Viriyalova">
     <title>Mesto</title>
@@ -13,11 +12,11 @@
 
 <body class="root">
     <header class="header">
-        <img class="header__logo" src="./images/mesto-logo.svg" alt="логотип сайта">
+        <div class="header__logo"></div>
     </header>
     <main>
         <section class="profile">
-            <img class="profile__avatar" src="./images/Cousto-avatar.jpeg" alt="Аватар пользователя">
+            <img class="profile__avatar" src="<%=require('./images/Cousto-avatar.jpg')%>" alt="Аватар пользователя">
             <div class="profile__info">
                 <div class="profile__title">
                     <h1 class="profile__title-text">Жак-Ив Кусто</h1>
@@ -40,9 +39,9 @@
             <button type="button" class="popup__close"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form action="Url" class="popup__form popup__form_type_edit-profile" name="EditForm" method="POST" novalidate>
-                <input type="text" name="Name" placeholder="Имя" class="popup__input popup__input_text_name" id="name" minlength="2" maxlength="40" required>
+                <input type="text" name="userName" placeholder="Имя" class="popup__input popup__input_text_name" id="name" minlength="2" maxlength="40" required>
                 <span class="name-error popup__form-error"></span>
-                <input type="text" name="Profession" placeholder="Профессия" class="popup__input popup__input_text_work" id="profession" minlength="2" maxlength="200" required>
+                <input type="text" name="userJob" placeholder="Профессия" class="popup__input popup__input_text_work" id="profession" minlength="2" maxlength="200" required>
                 <span class="profession-error popup__form-error popup__form-error_pos_under"></span>
                 <button type="submit" class="popup__submit" aria-label="Сохранить профиль">Сохранить</button>
             </form>
@@ -53,9 +52,9 @@
             <button type="button" class="popup__close" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Новое место</h2>
             <form action="Url" class="popup__form popup__form_type_add-card" name="AddForm" method="POST" novalidate>
-                <input type="text" class="popup__input popup__input_value_pic-name" placeholder="Название" name="pictureName" id="title" minlength="2" maxlength="30" required>
+                <input type="text" class="popup__input popup__input_value_pic-name" placeholder="Название" name="picName" id="title" minlength="2" maxlength="30" required>
                 <span class="title-error popup__form-error"></span>
-                <input type="url" class="popup__input popup__input_value_link" placeholder="Ссылка на картинку" name="pictureLink" id="link" required>
+                <input type="url" class="popup__input popup__input_value_link" placeholder="Ссылка на картинку" name="picLink" id="link" required>
                 <span class="link-error popup__form-error popup__form-error_pos_under"></span>
                 <button type="submit" class="popup__submit popup__submit_disabled" aria-label="Сохранить картинку" disabled>Создать</button>
             </form>
@@ -65,14 +64,14 @@
     <div class="popup popup_type_pic">
         <div class="popup__pic-container">
             <button type="button" aria-label="Закрыть картинку" class="popup__close"></button>
-            <img class="popup__pic" alt="Гора Эльбрус" src="./images/Gora-Elbrus.jpg">
+            <img class="popup__pic" alt="Гора Эльбрус" src="#">
             <h2 class="popup__pic-title"></h2>
         </div>
     </div>
     <template class="elements__template">
         <li class="element">
           <button type="button" class="element__delete-button" aria-label="Удалить карточку"></button>
-          <img src="./images/Gora-Elbrus.jpg" alt="Гора Эльбрус" class="element__image">
+          <img src="#" alt="Гора Эльбрус" class="element__image">
           <div class="element__description">
             <h2 class="element__title">Эльбрус</h2>
             <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
@@ -81,7 +80,6 @@
       </template>
 
 
-    <script type="module" src='./script/index.js'></script>
 </body>
 
 </html>
