@@ -1,10 +1,3 @@
-import arkhyz from '../../images/arkhyz.jpg';
-import chelyabinsk from '../../images/chelyabinsk-oblast.jpg';
-import ivanovo from '../../images/ivanovo.jpg';
-import kamchatka from '../../images/kamchatka.jpg';
-import kholmogorsky from '../../images/kholmogorsky-rayon.jpg';
-import baikal from '../../images/baikal.jpg';
-
 // choose profile edit button
 const editPopupButton = document.querySelector('.profile__edit-button');
 // choose add card button
@@ -13,38 +6,8 @@ const addCardPopupButton = document.querySelector('.profile__add-button');
 const nameInput = document.querySelector('.popup__input_text_name');
 // find job input
 const jobInput = document.querySelector('.popup__input_text_work');
-
-const cards = [{
-        name: 'Архыз',
-        link: arkhyz,
-        alt: 'Архыз'
-    },
-    {
-        name: 'Челябинская область',
-        link: chelyabinsk,
-        alt: 'Челябинская область'
-    },
-    {
-        name: 'Иваново',
-        link: ivanovo,
-        alt: 'Иваново'
-    },
-    {
-        name: 'Камчатка',
-        link: kamchatka,
-        alt: 'Камчатка'
-    },
-    {
-        name: 'Холмогорский район',
-        link: kholmogorsky,
-        alt: 'Холмогорский район'
-    },
-    {
-        name: 'Байкал',
-        link: baikal,
-        alt: 'Байкал'
-    }
-];
+// avatar 
+const profileAvatar = document.querySelector('.profile__avatar-container');
 
 const config = {
     inputSelector: '.popup__input',
@@ -53,11 +16,12 @@ const config = {
     invalidInputClass: 'popup__input_state_invalid'
 }
 
-export {
-    editPopupButton,
-    addCardPopupButton,
-    nameInput,
-    jobInput,
-    cards,
-    config
+const configApi = {
+    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-26',
+    headers: {
+        authorization: 'f8c29828-f721-4342-b2ca-aad285830080',
+        'Content-Type': 'application/json'
+    }
 }
+
+export { editPopupButton, profileAvatar, addCardPopupButton, nameInput, jobInput, config, configApi }
