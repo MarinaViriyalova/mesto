@@ -44,11 +44,11 @@ const editProfilePop = new PopupWithForm('.popup_type_edit', (formData) => {
 editProfilePop.setEventListeners();
 
 const deleteCardConfirmPop = new PopupDeleteConfirm('.popup_type_delete', (cardId, card) => {
-    deleteCardConfirmPop.setSubmitButtonMassage('Удаление...')
+    deleteCardConfirmPop.setSubmitButtonMessage('Удаление...')
     api.deleteCard(cardId, card)
         .then(() => { card.deleteCard(), deleteCardConfirmPop.close() })
         .catch(err => console.log(err))
-        .finally(() => { deleteCardConfirmPop.setSubmitButtonMassage('Да') })
+        .finally(() => { deleteCardConfirmPop.setSubmitButtonMessage('Да') })
 });
 deleteCardConfirmPop.setEventListeners();
 
@@ -86,7 +86,7 @@ function cardGenerator(cardItem, userId) {
 }
 
 function submitProfileForm(data) {
-    editProfilePop.setSubmitButtonMassage('Сохранение...')
+    editProfilePop.setSubmitButtonMessage('Сохранение...')
     api.editUserInfo(data)
         .then(res => {
             const data = {
@@ -97,11 +97,11 @@ function submitProfileForm(data) {
             editProfilePop.close()
         })
         .catch(err => console.log(err))
-        .finally(() => { editProfilePop.setSubmitButtonMassage('Сохранить') })
+        .finally(() => { editProfilePop.setSubmitButtonMessage('Сохранить') })
 }
 
 function submitProfileAvatar(data) {
-    editProfileAvatarPop.setSubmitButtonMassage('Сохранение...')
+    editProfileAvatarPop.setSubmitButtonMessage('Сохранение...')
     api.editUserAvatar(data)
         .then(res => {
             const data = {
@@ -111,18 +111,18 @@ function submitProfileAvatar(data) {
             editProfileAvatarPop.close()
         })
         .catch(err => console.log(err))
-        .finally(() => { editProfileAvatarPop.setSubmitButtonMassage('Сохранить') })
+        .finally(() => { editProfileAvatarPop.setSubmitButtonMessage('Сохранить') })
 }
 
 function submitAddCardForm(data) {
-    addCardPop.setSubmitButtonMassage('Создание...')
+    addCardPop.setSubmitButtonMessage('Создание...')
     api.postCard(data)
         .then(res => {
             cardGenerator(res, res.owner._id)
             addCardPop.close()
         })
         .catch(err => console.log(err))
-        .finally(() => { addCardPop.setSubmitButtonMassage('Создать'), addCardFormValidator.resetValidation() })
+        .finally(() => { addCardPop.setSubmitButtonMessage('Создать'), addCardFormValidator.resetValidation() })
 }
 
 // listeners 

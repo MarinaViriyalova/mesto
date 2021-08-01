@@ -5,6 +5,7 @@ export default class PopupDeleteConfirm extends Popup {
         super(popupSelector);
         this._submitCallback = submitCallback;
         this._form = this._popup.querySelector('.popup__form');
+        this._popupSubmitButton = this._popup.querySelector('.popup__submit');
     }
 
     open(cardId, card) {
@@ -19,6 +20,9 @@ export default class PopupDeleteConfirm extends Popup {
             evt.preventDefault();
             this._submitCallback(this._cardItemId, this._card);
         });
+    }
+    setSubmitButtonMessage(message) {
+        this._popupSubmitButton.textContent = message;
     }
 
 }
